@@ -1,0 +1,128 @@
+.main--div {
+  display: flex;
+  align-items: center;
+  /* 수직 정렬 */
+  flex-direction: row;
+  /* default: row */
+  justify-content: center;
+  /* flex direction에 대해서 정렬방식 선택 */
+}
+
+button {
+  display: block;
+  border: none;
+}
+
+.btn {
+  text-decoration: none;
+  font-size: 1.25rem;
+  margin: 32px;
+  position: relative;
+  padding: 20px 30px;
+}
+
+.btn-1 {
+  overflow: hidden;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-1::after {
+  content: "";
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  top: -40px;
+  left: -300px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #27d86c 0%,
+    #26caf8 50%,
+    #c625d0 100%
+  );
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+
+.btn-1:hover {
+  transform: translate(0, -6px);
+  box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, 0.5),
+    -10px 10px 25px 0 rgba(39, 200, 255, 0.5);
+}
+
+.btn-1:hover::after {
+  transform: rotate(150deg);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  width: 450px;
+  background: #fff;
+  padding: 30px;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapper .input-data {
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+
+.wrapper .input-data input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid silver;
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 15px;
+  color: #4158d0;
+}
+
+.wrapper .input-data label {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-data .underline {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+}
+
+.input-data .underline:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #4158d0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before {
+  transform: scaleX(1);
+}
