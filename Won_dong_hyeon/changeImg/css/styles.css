@@ -1,0 +1,10 @@
+.main_div {
+  display: flex;
+  justify-content: center;
+}
+
+.mini {
+  width: 200px;
+  height: 300px;
+  margin: 40px;
+}
