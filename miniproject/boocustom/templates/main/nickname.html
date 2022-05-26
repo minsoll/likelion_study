@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>나만의 BOO 만들기</title>
+    <link rel="stylesheet" type="text/css" href="{% static './css/nickname.css' %}" />
+  </head>
+
+  <body>
+    <div class="main--div">
+      {% static './images/나만의 부를 꾸며보세요.png' %}
+      <img src="{% static './images/한국외국어대학교.jpg' %}" alt="한국외국어대학교" />
+    </div>
+    <div class="main--div">
+      <img
+        src="{% static './images/나만의 부를 꾸며보세요.png' %}"
+        alt="나만의 부를 꾸며보세요"
+      />
+    </div>
+    <div class="main--div main--form">
+      <form name="nickname-form">
+        <div class="wrapper">
+          <div class="input-data">
+            <input type="text" required />
+            <div class="underline" onclick=""></div>
+            <label>Nickname</label>
+          </div>
+        </div>
+        <div
+          class="btn btn-1"
+          onclick="document.forms['nickname-form'].submit();moveURL();"
+        >
+          GO
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    function moveURL() {
+      location.href = "./select_boo.html";
+    }
+  </script>
+</html>
