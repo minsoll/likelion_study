@@ -5,5 +5,5 @@ for (var i = 0; i < boos.length; i++) {
 
 function select() {
   var boo = this.getAttribute("src");
-  window.open("decorate_boo.html?"+boo, "_self");
+  window.open("select_country.html?"+boo, "_self");
 }
