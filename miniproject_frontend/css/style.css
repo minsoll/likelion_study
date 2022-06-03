@@ -12,6 +12,12 @@ div{
   width: 300px;
   height: 300px;
 }
+.Country{
+  border: solid 1px;
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+}
 .canvas{
   border: solid 1px;
 }
