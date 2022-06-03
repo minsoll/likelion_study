@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>
+    나만의 BOO 만들기
+  </title>
+  <link rel="stylesheet" type="text/css" href="{% static './css/style.css' %}">
+</head>
+
+<body>
+  <div>옷을 그려주세요</div>
+  <div>
+    <canvas id="canvas" class="canvas" width="600" height="600"></canvas>
+  </div>
+  <div id="palette">
+    <span class="red">red</span>
+    <span class="orange">orange</span>
+    <span class="yellow">yellow</span>
+    <span class="green">green</span>
+    <span class="blue">blue</span>
+    <span class="navy">navy</span>
+    <span class="purple">purple</span>
+    <span class="black">black</span>
+    <span class="white">white</span>
+    <span class="clear">clear</span>
+    <span class="fill">fill</span>
+  </div>
+  <div>
+  
+  </div>
+  <script type="text/javascript" src="{% static './js/canvas.js' %}"></script>
+</body>
+
+</html>
+
+
+
+

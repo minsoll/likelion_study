@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>
+    나만의 BOO 만들기
+  </title>
+  <link rel="stylesheet" type="text/css" href="{% static './css/style.css' %}">
+</head>
+
+<body>
+  <div>Boo 고르기</div>
+  <div>
+    <img class="Boo" src="{% static './images/Boo_inkyung.png' %}">
+    <img class="Boo" src="{% static './images/Boo_minsol.png' %}">
+    <img class="Boo" src="{% static './images/Boo_woojin.png' %}">
+    
+  </div>
+  <div>
+    
+    <img class="Boo" src="{% static './images/Boo_donghyun.png' %}">
+    <img class="Boo" src="{% static './images/Boo_soobin.png' %}">
+    <img class="Boo" src="{% static './images/Boo_hwichawn.png' %}">
+  </div>
+
+  <script type="text/javascript" src="{% static './js/float_boo.js' %}"></script>
+</body>
+</html>
