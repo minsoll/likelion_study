@@ -19,26 +19,17 @@
       />
     </div>
     <div class="main--div main--form">
-      <form name="nickname-form">
+      <form action="" method="POST" name="nickname-form">
+        {% csrf_token %}
         <div class="wrapper">
           <div class="input-data">
-            <input type="text" required />
+            <input type="text" name="username"  required />
             <div class="underline" onclick=""></div>
             <label>Nickname</label>
           </div>
         </div>
-        <div
-          class="btn btn-1"
-          onclick="document.forms['nickname-form'].submit();moveURL();"
-        >
-          GO
-        </div>
+        <div class="btn btn-1" onclick="document.forms['nickname-form'].submit();"> GO </div>
       </form>
     </div>
   </body>
-  <script>
-    function moveURL() {
-      location.href = "./select_boo";
-    }
-  </script>
 </html>

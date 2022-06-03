@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Post
 
 def home(request):
     return render(request, 'main/index.html')
@@ -14,4 +15,3 @@ def select_country(request):
 
 def decorate_boo(request):
     return render(request, 'main/decorate_boo.html')
-# Create your views here.
