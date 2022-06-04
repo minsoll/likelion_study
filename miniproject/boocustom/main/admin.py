@@ -1,18 +1,30 @@
 from django.contrib import admin
-from .models import Post
+from .models import Country, Image, Greetings
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin1(admin.ModelAdmin):
     list_display = (
         'nickname',
         'country', 
-        'image', 
-        'greetings', 
+        )
+    search_fields = ('nickname',)
 
+class PostAdmin2(admin.ModelAdmin):
+    list_display = (
+        'nickname',
+        'image', 
+        )
+    search_fields = ('nickname',)
+
+class PostAdmin3(admin.ModelAdmin):
+    list_display = (
+        'nickname',
+        'greetings', 
         )
     search_fields = ('nickname',)
 
 
 
-admin.site.register(Post, PostAdmin)
-
+admin.site.register(Country, PostAdmin1)
+admin.site.register(Image, PostAdmin2)
+admin.site.register(Greetings, PostAdmin3)
 

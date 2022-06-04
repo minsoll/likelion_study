@@ -12,18 +12,21 @@
 
 <body>
   <div>나라 고르기</div>
-  <div>
-    <img class="Country" src="{% static './images/india.png' %}">
-    <img class="Country" src="{% static './images/indonesia.png' %}">
-    <img class="Country" src="{% static './images/japan.png' %}">
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div>
+      <input type="submit" name="send" value = 0 class="Country" style="background-image: url('{% static './images/india.png' %}'); background-repeat:no-repeat; background-size:100% 100%; font-size: 0px;">
+      <input type="submit" name="send" value = 1 class="Country" style="background-image: url('{% static './images/indonesia.png' %}'); background-repeat:no-repeat; background-size:100% 100%; font-size: 0px;">
+      <input type="submit" name="send" value = 2 class="Country" style="background-image: url('{% static './images/japan.png' %}'); background-repeat:no-repeat;background-size:100% 100%; font-size: 0px;">
 
-  </div>
-  <div>
+    </div>
+    <div>
 
-    <img class="Country" src="{% static './images/brazil.png' %}">
-    <img class="Country" src="{% static './images/china.png' %}">
-    <img class="Country" src="{% static './images/spain.png' %}">
-  </div>
+      <input type="submit" name="send" value = 3 class="Country" style="background-image: url('{% static './images/brazil.png' %}'); background-repeat:no-repeat;background-size:100% 100%; font-size: 0px;">
+      <input type="submit" name="send" value = 4 class="Country" style="background-image: url('{% static './images/china.png' %}'); background-repeat:no-repeat;background-size:100% 100%; font-size: 0px;">
+      <input type="submit" name="send" value = 5 class="Country" style="background-image: url('{% static './images/spain.png' %}'); background-repeat:no-repeat;background-size:100% 100%; font-size: 0px;">
+    </div>
+  </form>
 
   <script type="text/javascript" src="{% static './js/float_country.js' %}"></script>
 </body>
