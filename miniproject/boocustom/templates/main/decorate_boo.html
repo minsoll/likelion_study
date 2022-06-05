@@ -29,9 +29,35 @@
     <span class="fill">fill</span>
   </div>
   <div>
-  
+      <button type="button" id="save">스샷!</button>
   </div>
   <script type="text/javascript" src="{% static './js/canvas.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+  <script>
+  $(function(){
+    $("#save").click(function() { 
+      html2canvas($('#canvas').get(0)).then( function (canvas) {
+        var data = canvas.toDataURL();
+        //console.log(data)
+        // data:image/png;base64,iVBORw0KGgoAAAANSUhE.....
+        $.ajax({
+        type: 'POST',
+        url: 'saveImage',
+        data: {data:data},
+        success: function(result) {
+          var filename = result['filename'];
+          // document.forms[filename].submit();
+          console.log(filename);
+        },
+        error: function(e) { alert("에러발생");}
+      });
+
+      });
+    });
+  });
+  </script>
 </body>
 
 </html>
