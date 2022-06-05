@@ -1,5 +1,5 @@
 from django import forms
-from .models import Country
+from .models import Country, Image
 
 class CountryWriteForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -9,3 +9,8 @@ class CountryWriteForm(forms.ModelForm):
     class Meta:
         model = Country
         fields = ['country',]
+
+class ImageForm(forms.ModelForm):
+    class Meta:
+        model = Image
+        fields = ['image',]
