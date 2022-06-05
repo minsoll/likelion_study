@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>
+    나만의 BOO 만들기
+  </title>
+  <link rel="stylesheet" type="text/css" href="{% static './css/style.css' %}">
+</head>
+
+<body>
+  <div>옷을 그려주세요</div>
+  <div>
+    <canvas id="canvas" class="canvas" width="600" height="600"></canvas>
+  </div>
+  <div id="palette">
+    <span class="red">red</span>
+    <span class="orange">orange</span>
+    <span class="yellow">yellow</span>
+    <span class="green">green</span>
+    <span class="blue">blue</span>
+    <span class="navy">navy</span>
+    <span class="purple">purple</span>
+    <span class="black">black</span>
+    <span class="white">white</span>
+    <span class="clear">clear</span>
+    <span class="fill">fill</span>
+  </div>
+  <div>
+      <button type="button" id="save">스샷!</button>
+  </div>
+  <script type="text/javascript" src="{% static './js/canvas.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+  <script>
+  $(function(){
+    $("#save").click(function() { 
+      html2canvas($('#canvas').get(0)).then( function (canvas) {
+        var data = canvas.toDataURL();
+        //console.log(data)
+        // data:image/png;base64,iVBORw0KGgoAAAANSUhE.....
+        $.ajax({
+        type: 'POST',
+        url: 'saveImage',
+        data: {data:data},
+        success: function(result) {
+          var filename = result['filename'];
+          // document.forms[filename].submit();
+          console.log(filename);
+        },
+        error: function(e) { alert("에러발생");}
+      });
+
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>
+
+
+
+

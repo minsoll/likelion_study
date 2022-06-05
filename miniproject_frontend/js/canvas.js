@@ -1,28 +1,21 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext("2d");
-//canvas.width = innerWidth;
-//canvas.height = innerHeight;
 
-var boos = document.querySelectorAll(".Boo");
-for (var i = 0; i < boos.length; i++) {
-  boos[i].addEventListener("click", change_img);
-}
+let temp = location.href.split("?");
 
-function change_img() {
-  var new_src = this.getAttribute("src");
-  let img = new Image();
-  img.src = new_src;
-  ctx.clearRect(0, 0, 1000, 1000);
-  img.onload = function(){
-    ctx.drawImage(img, 10, 10);
-  }
+const img = new Image();
+img.src = temp[1];
+
+ctx.clearRect(0, 0, 1000, 1000);
+img.onload = function(){
+  ctx.drawImage(img, 50, 50);
+
 }
 
 const width = innerWidth - 60;
 const height = innerHeight;// - 170;
 
-//canvas.width = width;
-//canvas.height = height;
+
 canvas.style.margin = "20px";
 canvas.style.border = "3px double";
 canvas.style.cursor = 'pointer';
